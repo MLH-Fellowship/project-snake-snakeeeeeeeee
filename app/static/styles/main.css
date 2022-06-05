@@ -311,7 +311,7 @@ nav img {
 
 .page-link {
     width: 600px;
-    height:500px;
+    height: 500px;
 
 }
 
@@ -329,7 +329,7 @@ nav img {
     width: 100%;
 }
 
-.text-wrapper h3 a{
+.text-wrapper h3 a {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
@@ -365,10 +365,50 @@ h2 {
 
 .page-link-2 {
     width: 300px;
-    height:500px;
+    height: 500px;
 }
 
 .page-link-2 a img {
     width: 100%;
-    height:380px;
+    height: 380px;
+}
+
+footer {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #8933FF;
+}
+
+.main-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-footer img {
+    width: 100px;
+    
+}
+
+.footer-list a {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 58px;
+    color: #FFFFFF;
+    margin-right: 25px;
+}
+
+.love-footer {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    color: #FFFFFF;
+    margin-right: 25px;
 }
