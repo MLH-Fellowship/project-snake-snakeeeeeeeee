@@ -1,97 +1,84 @@
-p, h1, h2, h3, h4, h5, h6, button {
-    font-family: "Roboto", serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;600;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
-body {
-    background-color: #f5f5f9;
-    background-size: cover;
-    width: auto; 
-    overflow-x: hidden;
-    font-family: "Roboto", serif;
+* {
     margin: 0px;
+    padding: 0px;
 }
 
-.nav-bar {
-    width: 100%;
-    display: inline-block;
-    background-color: #1C539F;
-    font-family: "Roboto", serif;
-    font-weight: 700 !important;
-    padding-top: 10px;
-}
-
-.nav-content .logo-touch-target {
-    display: inline-flex;
-    height: 60%;
-    width: 350px;
-}
-
-.nav-content .nav-logo {
-    height: 60px;
-    margin: auto;
-}
-
-.nav-logo {
+nav {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    padding-right: 50px;
+    padding-left: 50px;
+    margin: 25px 0px;
+}
+
+nav img {
+    width: 50px;
+}
+
+.pages {
+    display: flex;
+    flex-direction: row;
     justify-content: center;
+    align-items: center;
 }
 
-.nav-logo img {
-    width: 200px;
-}
-
-.nav-content nav {
-    display: block;
-    width: 100%;
-    text-align: right;
-    padding-top: 0px;
-    padding-right: 0px;
-}
-
-.profile {
-    background-color: #1d539f !important;
+.pages a {
+    margin: 10px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
     text-align: center;
-    height: 320px;
-    margin-bottom: 50px;
+    color: #4B1AA1;
+    text-decoration: none;
 }
 
-.profile h1 {
-        font-size: 50px;
-        font-weight: 700;
-        color: white;
+.hero {
+    position: relative;
+    background: url('../img/Hero Background.png');
+    height: 500px;
 }
 
-.profile img {
-        border-radius: 50%;
-        max-width: 100%;
-        max-height: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        display: block;        
-        padding: 20px;
-}
-
-.profile .profile-picture {
-    margin-bottom: 30px;
+.hero .David {
+    position: absolute;
+    width: 200px;
     height: 200px;
+    right: 100px;
+    top: 50%;
+    filter: drop-shadow(0px 4px 25px rgba(0, 0, 0, 0.25));
+    border-radius: 200px;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
-.banner {
-    padding: 20px 0px 50px 0px;
-    height: 150px;
-    background-color: #1d539f;
+.hero .Enrique {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    left: 100px;
+    top: 50%;
+    filter: drop-shadow(0px 4px 25px rgba(0, 0, 0, 0.25));
+    border-radius: 200px;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
-.banner .logo {
-    max-width:180px;
-    max-height:60px;
-    width: auto;
-    height: auto;
-}
-
-.banner .title {
-    color: white;
-    font-size: 50px;
-    font-weight: 700;
+.hero h1 {
+    position: absolute;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 86px;
+    line-height: 104px;
+    text-align: center;
+    color: #FFFFFF;
+    left: 50%;
+    top: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
