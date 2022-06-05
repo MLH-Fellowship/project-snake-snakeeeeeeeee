@@ -124,3 +124,20 @@ nav img {
     left:100px;
     z-index: 1;
 }
+
+.introduction{
+    background-color: #F1F4F7;
+    height: 500px;
+    position: relative;
+}
+
+.introduction .about-us {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+}
+
+.introduction h3 {
+    margin: 1em;
+}
