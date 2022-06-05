@@ -1,40 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta property="og:title" content="Personal Portfolio">
-    <meta property="og:description" content="My Personal Portfolio">
-    <meta property="og:url" content="{{ url }}">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta property="og:title" content="Personal Portfolio" />
+    <meta property="og:description" content="My Personal Portfolio" />
+    <meta property="og:url" content="{{ url }}" />
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
 
-    <link lang='sass' rel="stylesheet" href="./static/styles/main.css">
-    <link rel='icon' href='./static/img/favicon.ico' type='image/x-icon' />
+    <link lang="sass" rel="stylesheet" href="./static/styles/main.css" />
+    <link rel="icon" href="./static/img/favicon.ico" type="image/x-icon" />
     <title>{{ title }}</title>
-</head>
+  </head>
 
-<body>
-    <header class="nav-bar">
-        <div class="nav-content">
-            <a href="/">
-                <div class="nav-logo">
-                    <img src="./static/img/logo.svg" />
-                </div>
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="../static/img/Fellow Logo.png" alt="logo" />
+      </div>
+      <div class="pages">
+        <a href="/"> + About Us </a>
+        <a href="/"> Our Hobbies </a>
+        <a href="/"> Places </a>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero">
+        <div class="rectangle"></div>
+        <div class="triangle"></div>
+        <div class="inner-triangle"></div>
+        <div class="circle"></div>
+        <img class="David" src="../static/img/david.png" alt="David's Photo" />
+        <h1>
+          Awesome <br />
+          Production <br />
+          Engineers
+        </h1>
+        <img
+          class="Enrique"
+          src="../static/img/enrique.jpg"
+          alt="Enrique's Photo"
+        />
+      </section>
+
+      <section class="introduction">
+        <div class="about-us">
+          <h3>
+            We're designers, developers, students, problem solvers ramen lovers
+            and happy dancers
+          </h3>
+          <p>
+            If you're looking for someone with this capacities, you are in the
+            right place! <br />
+            The best team you can search for is here, experience with ideathons,
+            hackathons and <br />
+            competitive programming is our quality seal to guarantee excellent
+            work
+          </p>
+        </div>
+
+        <img class="ramen" src="../static/img/ramen icon.png" />
+      </section>
+
+      <section class="view-bio">
+        <div class="wrapper">
+          <img
+            src="../static/img/david-2.jpg"
+            alt="David's Bio Background Image"
+          />
+          <button>
+            <a href="#david-bio">
+              <h3>David Lázaro</h3>
+              <p>View Bio</p>
             </a>
+          </button>
         </div>
-    </header>
+        <div class="wrapper">
+          <img
+            src="../static/img/enrique.jpg"
+            alt="Enrique's Bio Background Image"
+          />
+          <button>
+            <a href="#enrique-bio">
+              <h3>Enrique Rivera</h3>
+              <p>View Bio</p>
+            </a>
+          </button>
+        </div>
+      </section>
 
-    <div class="profile">
-        <div id="profile-picture" class="profile-picture">
-            <img src="./static/img/logo.jpg">
+      <section id="david-bio">
+        <div class="container">
+          <div class="info">
+            <h4>David Lázaro - CS Student / Frond End Developer</h4>
+            <h2>Your friendly nerd gym partner</h2>
+            <h3>A hands-on hackathon lover with a huge love 4 orange cats</h3>
+            <p>
+              David has been responsible for bringin to life events and tech
+              communities with partners like GitHub, Microsoft Learn, Google
+              Students Club, Hack Club, and others. He has spend the last year
+              learning Front-End technologies, DS&A and Dev Ops. When David
+              isn't busy, he can be found in the gym or exploring the wonders of
+              Mexico
+            </p>
+          </div>
+          <div class="img-wrapper">
+            <img src="../static/img/david-2.jpg" alt="David's Photo" />
+
+            <a href="/">
+              <button class="see-more">
+                <img src="../static/img/plus icon.png" alt="Plus icon" />
+              </button>
+            </a>
+          </div>
+          <div class="rectangle"></div>
+          <div class="circle"></div>
         </div>
-        <h1>{{ title }}</h1>
-    </div>
-</body>
+      </section>
+
+      <section id="Enrique">
+        <div class="container">
+          <div class="info">
+            <h4>Enrique Rivera - CS Student / Frond End Developer</h4>
+            <h2>Your friendly nerd gym partner</h2>
+            <h3>A hands-on hackathon lover with a huge love 4 orange cats</h3>
+            <p>
+              David has been responsible for bringin to life events and tech
+              communities with partners like GitHub, Microsoft Learn, Google
+              Students Club, Hack Club, and others. He has spend the last year
+              learning Front-End technologies, DS&A and Dev Ops. When David
+              isn't busy, he can be found in the gym or exploring the wonders of
+              Mexico
+            </p>
+          </div>
+          <div class="img-wrapper">
+            <img src="../static/img/enrique.jpg" alt="David's Photo" />
+
+            <a href="/">
+              <button class="see-more">
+                <img src="../static/img/plus icon.png" alt="Plus icon" />
+              </button>
+            </a>
+          </div>
+          <div class="rectangle"></div>
+          <div class="circle"></div>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
