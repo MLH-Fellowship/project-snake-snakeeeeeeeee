@@ -82,3 +82,45 @@ nav img {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
+
+.rectangle {
+    width:20px;
+    height:20px;
+    border: solid #EA60B4 4px;
+    position: absolute;
+    top:40px;
+    left:630px;
+    z-index: 1;
+    transform: rotate(45deg);
+}
+.triangle {
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent; 
+    border-right:20px solid #03FEA5; 
+    position: absolute;
+    top:40px;
+    right:100px;
+    z-index: 1;
+    transform: rotate(45deg);
+}
+.inner-triangle {
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent; 
+    border-right:10px solid #6928d8; 
+    position: absolute;
+    top:51px;
+    right:104px;
+    z-index: 1;
+    transform: rotate(45deg);
+}
+
+.circle {
+    width:20px;
+    height:20px;
+    border: solid #E1FF01 4px;
+    border-radius: 50%;
+    position: absolute;
+    top:110px;
+    left:100px;
+    z-index: 1;
+}
