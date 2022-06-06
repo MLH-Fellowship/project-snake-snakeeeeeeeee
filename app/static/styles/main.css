@@ -134,43 +134,53 @@ nav img {
     position: relative;
 }
 
-.introduction .about-us {
-    position: absolute;
-    top: 10%;
-    width: 100%;
+.about-us {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+}
+
+.about-us h3 {
+    margin: 50px 0px 25px 0px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 48px;
     text-align: center;
     color: #465A69;
+}
+
+.about-us p {
     font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 29px;
+    text-align: center;
+    color: #465A69;
 }
 
-.introduction h3 {
-    margin: 1em;
-    font-weight: 500;
-}
 
-.introduction p {
-    font-weight: 300;
-}
-
-.ramen {
-    display: inline-block;
-    width: 100%;
-
-}
-
-.ramen .ramenL{
-   position: absolute;
-   width: 50%;
-   height: 80%;
-   transform: translate(-40%,60%) rotate(45deg);
-   
-}
-
-.ramen .ramenR{
+.ramenL {
     position: absolute;
-    width: 50%;
-    height:80%;
-    transform: translate(115%,52%) rotate(-45deg);
+    width: 500px;
+    left: -170px;
+    top: 86.87px;
+    transform: rotate(45deg);
+    filter: invert(33%) sepia(15%) saturate(840%) hue-rotate(163deg) brightness(93%) contrast(85%);
+
+}
+.ramenR {
+    position: absolute;
+    width: 500px;
+    right: -170px;
+    top: 86.87px;
+    transform: rotate(-45deg);
+    filter: invert(33%) sepia(15%) saturate(840%) hue-rotate(163deg) brightness(93%) contrast(85%);
 }
 
 .view-bio {
@@ -420,7 +430,7 @@ footer {
 
 .main-footer img {
     width: 100px;
-    
+
 }
 
 .footer-list a {
