@@ -170,3 +170,7 @@ def education2():
 @app.route('/hobbies')
 def hobbies():
     return render_template('/hobbies.html', title="Education", data=hobbies_json, url=os.getenv("URL"))
+
+@app.route('/places')
+def places():
+    return render_template('/about-us/places.html', title="Education", url=os.getenv("URL"))
