@@ -147,9 +147,9 @@ def index():
 def about():
     return render_template('/about-us/index.html', title="+ About Us", url=os.getenv("URL"))
 
-@app.route('/about/quicksearch')
-def quick_search():
-    return render_template('/about-us/quick-search.html', title="+ About Us", url=os.getenv("URL"))
+@app.route('/about/quicksearch/<fellowPartner>')
+def quick_search(fellowPartner):
+    return render_template('/about-us/quick-search.html', title="+ About Us", url=os.getenv("URL"), fellowPartner = fellowPartner)
 
 @app.route('/work/david')
 def work():
