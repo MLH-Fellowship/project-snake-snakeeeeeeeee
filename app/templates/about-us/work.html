@@ -1,0 +1,29 @@
+{%extends "base.html"%} {%block head%}
+<link
+  lang="sass"
+  rel="stylesheet"
+  href="../../static/styles/about-us/work.css"
+/>
+{%endblock%} {%block content%}
+<section class="container">
+  <a href="/about">
+    <img src="../../static/img/white back arrow.png" alt="Go Back Icon" />
+  </a>
+  {% for job in data[work_id]%}
+
+  <article class="job">
+    <img src="../{{job.image}}" alt="Company Picture" />
+    <div class="info">
+      <h2>{{job.title}}</h2>
+      <h3>{{job.company}}</h3>
+      <h4>{{job.date}}</h4>
+      <p>
+        {% for bullet in job.bullets %}
+        <li>{{bullet.description}}</li>
+        {%endfor%}
+      </p>
+    </div>
+  </article>
+  {%endfor%}
+</section>
+{%endblock%}   

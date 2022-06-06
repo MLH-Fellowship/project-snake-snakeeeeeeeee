@@ -1,0 +1,34 @@
+{%extends "base.html"%} {%block head%}
+<link
+  lang="sass"
+  rel="stylesheet"
+  href="../static/styles/hobbies.css"
+/>
+{%endblock%} {%block content%}
+<section class="container">
+  <a href="/">
+    <img src="../../static/img/white back arrow.png" alt="Go Back Icon" />
+  </a>
+  <h2>David's Hobbies</h2>
+  <article class="hobbie-list">
+  {% for hobbie in data["David"]%}
+  
+    <div class="hobbie">
+        <img src="{{hobbie.image}}" alt="hobbie image" />
+        <h3>{{hobbie.name}}</h3>
+        <p>{{hobbie.description}}</p>
+    </div>
+  {%endfor%}
+
+  <h2>Enrique's Hobbies</h2>
+  <!-- <article class="hobbie-list">
+  {% for hobbie in data["Enrique"]%}
+    <div class="hobbie">
+        <img src="{{hobbie.image}}" alt="hobbie image" />
+        <h3>{{hobbie.name}}</h3>
+        <p>{{hobbie.description}}</p>
+    </div>
+  {%endfor%}
+</article> -->
+</section>
+{%endblock%}   
