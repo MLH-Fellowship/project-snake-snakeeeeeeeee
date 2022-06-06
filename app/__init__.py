@@ -59,9 +59,34 @@ work_json = {
     ],
     "Enrique":[
         {
-            
-        }
-    ]
+            "title": "Production Engineer Fellow",
+            "image": '../static/img/fellowship.png',
+            "company": "MLH Fellowship",
+            "date": "May 2022 - Current",
+            "bullets": [
+                {
+                    "description": "Selected from 100 students for a 12 week program sponsored by Meta learning and working on Production / Site Reliability Engineering and DevOps.",    
+                },
+                {
+                    "description": "Working with Linux Systems, Flask, Docker, GitHub Actions, cAdvisor and other technologies to keep services and applications running and highly available."
+                },
+            ]
+        },
+        {
+            "title": "FRI Quantum Computing Research Fellowhsip",
+            "image": '../static/img/texasFRI.jpg',
+            "company": "UT - College of Natural Sceinces",
+            "date": "June 2022 - Current",
+            "bullets": [
+                {
+                    "description": "Selected from 60 students for a 10 week program sponsored to learn to build optical quantum computers.",    
+                },
+                {
+                    "description": "Used technologies like IBM Quantum composer to work in team to simulate quantum computers and perdict their behavior"
+                },
+            ]
+        },
+    ],
 }
 
 education_json = {
@@ -75,7 +100,16 @@ education_json = {
  ],
  "Enrique":[
      {
-         
+         "school": "University of Texas at Austin",
+         "title": "Bachelor of Science in Computational Physics",
+         "date":"Graduating in 2025",
+         'image': '../static/img/uanl.png',
+     },
+     {
+         "school": "San Antonio College",
+         "title": "Information Technology & Security Academy",
+         "date":"Graduated 2020",
+         'image': '../static/img/uanl.png',
      }
  ]   
 }
