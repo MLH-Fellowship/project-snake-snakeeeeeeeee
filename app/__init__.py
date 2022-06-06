@@ -2,6 +2,7 @@ from optparse import TitledHelpFormatter
 import os
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
+import folium
 
 load_dotenv()
 app = Flask(__name__)
@@ -136,3 +137,24 @@ def education2():
 @app.route('/hobbies')
 def hobbies():
     return render_template('/hobbies.html', title="Education", data=hobbies_json, url=os.getenv("URL"))
+
+@app.route('/places')
+def places():
+    start_coords = (19.427568618500434, -99.16714800327108)
+    tooltip="Click me!"
+    folium_map = folium.Map(location=start_coords, zoom_start=6)
+    folium.Marker(
+    [19.441880355203104, -99.20565298488336], popup="<i>Mexico City</i>", tooltip=tooltip).add_to(folium_map)
+    folium.Marker(
+    [25.671574060835916, -100.31044027616298], popup="<i>Monterrey</i>", tooltip=tooltip).add_to(folium_map)
+    folium.Marker(
+    [19.200450774980304, -96.13845660409997], popup="<i>Veracruz</i>", tooltip=tooltip).add_to(folium_map)
+    folium.Marker(
+    [30.285303649633462, -97.7342065363303], popup="<i>Austin</i>", tooltip=tooltip).add_to(folium_map)
+
+    folium_map.save('templates/map.html')
+    return render_template('/places.html', title="Places")
+
+@app.route('/map')
+def map():
+    return render_template('map.html')
