@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;600;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 50px;
+    padding-left: 50px;
+    margin: 25px 0px;
+}
+
+nav img {
+    width: 50px;
+}
+
+.pages {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.pages a {
+    margin: 10px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: #4B1AA1;
+    text-decoration: none;
+}
+
+.container a {
+    border: 0px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 110px;
+    top: -75px;
+    z-index: 2;
+    background-color: #4B1AA1;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.5s ease; 
+}
+
+.container a:hover{
+    background-color: #683eb0;
+}
+
+.container a img{
+    width: 25px;
+}
+
+.container a {
+    border: 0px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: #4B1AA1;
+    color: white;
+    position: absolute;
+    left: 110px;
+    top: -75px;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 100px 0px;
+    position: relative;
+}
+
+.job {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.info {
+    width: 50%;
+    margin-left: 50px;
+}
+
+.info h2 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 58px;
+    color: #4B1AA1;
+}
+
+.info h3 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    color: #8933FF;
+
+}
+
+.info h4 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #8933FF;
+}
+
+.job img {
+    width: 400px;
+    height: 225px;
+    object-fit: cover;
+}
+
+li {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 22px;
+    color: #979797;
+}
+
+footer {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #8933FF;
+}
+
+.main-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-footer img {
+    width: 100px;
+
+}
+
+.footer-list a {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 58px;
+    color: #FFFFFF;
+    margin-right: 25px;
+    text-decoration: none;
+}
+
+.love-footer {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    color: #FFFFFF;
+    margin-right: 25px;
+}

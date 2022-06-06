@@ -1,12 +1,24 @@
-{%extends "base.html"%}
-{%block head%}
-    <link
-      lang="sass"
-      rel="stylesheet"
-      href="../../static/styles/about-us/quick.css"
-    />
-{%endblock%}
- 
-{%block content%}
-      {{data}}
-{%endblock%}
+{%extends "base.html"%} {%block head%}
+<link
+  lang="sass"
+  rel="stylesheet"
+  href="../../static/styles/about-us/work.css"
+/>
+{%endblock%} {%block content%}
+<section class="container">
+  <a href="/about">
+    <img src="../../static/img/white back arrow.png" alt="Go Back Icon" />
+  </a>
+  {% for edu in data[education_id]%}
+
+  <article class="job">
+    <img src="../{{edu.image}}" alt="Company Picture" />
+    <div class="info">
+      <h2>{{edu.school}}</h2>
+      <h3>{{edu.title}}</h3>
+      <h4>{{edu.date}}</h4>
+    </div>
+  </article>
+  {%endfor%}
+</section>
+{%endblock%}   
