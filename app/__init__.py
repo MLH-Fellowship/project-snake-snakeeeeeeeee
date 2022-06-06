@@ -79,6 +79,32 @@ education_json = {
      }
  ]   
 }
+
+hobbies_json= {
+    "David" : [
+        {
+            "image":'../static/img/cbum.png',
+            "name": "Gym Training",
+            "description": "We all are gonna make it brah's",
+        },
+        {
+            "image":'../static/img/oscar meza.png',
+            "name": "Cooking",
+            "description": "Cooking for other ones and making some really tasty food makes me so happy :)",
+        },
+        {
+            "image":'../static/img/mx.png',
+            "name": "Explore Mexico",
+            "description": "From Cancún to Tijuana, Mexico has so many wonders and my goal is to visit all the 31 states!",
+        }
+    ],
+    "Enrique":[
+     {
+         
+     }
+ ]   
+    
+}
 @app.route('/')
 def index():
     return render_template('index.html', title="David & Enrique", url=os.getenv("URL"))
@@ -106,3 +132,7 @@ def education():
 @app.route('/education/enrique')
 def education2():
     return render_template('/about-us/education.html', title="Education", education_id="Enrique", data=education_json, url=os.getenv("URL"))
+
+@app.route('/hobbies')
+def hobbies():
+    return render_template('/hobbies.html', title="Education", data=hobbies_json, url=os.getenv("URL"))
