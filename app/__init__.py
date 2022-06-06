@@ -186,9 +186,9 @@ def places():
     folium.Marker(
     [30.285303649633462, -97.7342065363303], popup="<i>Austin</i>", tooltip=tooltip).add_to(folium_map)
 
-    folium_map.save('templates/map.html')
+    folium_map.save('./map.html')
     return render_template('/places.html', title="Places")
 
 @app.route('/map')
 def map():
-    return render_template('map.html')
+    return render_template('/map.html')
