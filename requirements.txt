@@ -10,3 +10,4 @@ pycparser==2.21
 PyMySQL==1.0.2
 python-dotenv==0.17.1
 Werkzeug==2.0.1
+folium==0.12.1
