@@ -3,10 +3,33 @@ import os
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
 import folium
+import datetime
+from playhouse.shortcuts import model_to_dict
+from peewee import *
 
 load_dotenv()
-app = Flask(__name__)
 
+
+db=MySQLDatabase(
+    "myportfolio",
+    host= 'localhost',
+    user='DAVID',
+    password = '=n24?]@u/BbPZWYH',
+    port=3306 
+)
+
+class TimelinePost(Model): 
+    name = CharField()
+    email = CharField()
+    content = TextField()
+    created_at = DateTimeField(default=datetime.datetime.now)
+   
+    class Meta():
+        database = db
+
+db.connect()
+db.create_tables([TimelinePost])
+        
 work_json = {
     "David":[
         {
@@ -140,6 +163,8 @@ hobbies_json= {
  ]   
     
 }
+
+app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template('index.html', title="David & Enrique", url=os.getenv("URL"))
@@ -192,3 +217,36 @@ def places():
 @app.route('/map')
 def map():
     return render_template('/map.html')
+
+
+@app.route('/timeline')
+def timeline():
+    return render_template('/timeline.html', title="Timeline")
+
+#Post request to get the data from the form
+@app.route('/api/timeline_post', methods=['POST'])
+def post_time_line_post():
+    name = request.form['name']
+    email = request.form['email']
+    content = request.form['content']
+    timeline_post = TimelinePost.create(name=name, email=email, content=content)
+    print(model_to_dict(timeline_post))
+    print("TEST:", timeline_post)
+    return model_to_dict(timeline_post)
+
+#Get timeline post
+@app.route('/api/timeline_post', methods=['GET'])
+def get_time_line_post():
+    return {
+        'timeline_post': [
+        model_to_dict(p)
+        for p in TimelinePost.select().order_by(TimelinePost.created_at.desc())
+        ]
+    }
+
+#Delete post by id
+"""
+@app.rout('/api/timeline_post', methods=['DELETE'])
+def delete_timeline_post():
+    return timelin
+"""
