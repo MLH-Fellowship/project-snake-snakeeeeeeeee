@@ -35,6 +35,7 @@
     fetch("http://146.190.27.200:5000/api/timeline_post", {
       method: "POST",
       body: payload,
+      mode: 'no-cors',
     })
       .then((res) => res.json())
       .then((data) => {
