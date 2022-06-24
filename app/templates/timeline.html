@@ -43,7 +43,12 @@
       .catch((err) => console.log(err));
   });
 
-  fetch("http://146.190.27.200:5000/api/timeline_post")
+  fetch("http://146.190.27.200:5000/api/timeline_post", 
+        {
+           method: 'GET',
+           mode: 'cors,
+           cache: 'default',
+        })
     .then((res) => res.json())
     .then((data) => {
         console.log(data)
