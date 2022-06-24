@@ -37,7 +37,10 @@
       body: payload,
       mode: 'no-cors',
     })
-      .then((res) => res.json())
+      .then((res) => {
+      console.log(res)
+      res.json()
+    })
       .then((data) => {
         (data) => console.log(data);
       })
