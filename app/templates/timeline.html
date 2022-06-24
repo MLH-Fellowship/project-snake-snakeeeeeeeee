@@ -53,7 +53,10 @@
            mode: 'no-cors',
            cache: 'default',
         })
-    .then((res) => res.json())
+    .then((res) => {
+    console.log(res)
+    res.json()
+  })
     .then((data) => {
         console.log(data)
         const html = data.timeline_post.map(post =>{
