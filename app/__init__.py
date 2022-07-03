@@ -10,11 +10,11 @@ from peewee import *
 load_dotenv()
 
 
-db=MySQLDatabase(
-    "myportfolio",
-    host= '146.190.27.200',
-    user='ADMIN',
-    password = '=n24?]@u/BbPZWYH',
+mydb=MySQLDatabase(
+    "testdb",
+    user='test2',
+    password='mypassward',
+    host='localhost',
     port=3306 
 )
 
@@ -25,10 +25,11 @@ class TimelinePost(Model):
     created_at = DateTimeField(default=datetime.datetime.now)
    
     class Meta():
-        database = db
+        database = mydb
 
-db.connect()
-db.create_tables([TimelinePost])
+
+mydb.connect()
+mydb.create_tables([TimelinePost])
         
 work_json = {
     "David":[
