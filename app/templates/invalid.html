@@ -1,0 +1,62 @@
+{% extends "base.html"%} {% block head %}
+<link lang="sass" rel="stylesheet" href="../static/styles/timeline.css" />
+{{super()}} {%endblock%} {% block content %}
+
+
+<div class="container">
+	<h3>{{ e }}</h3>
+	<h2>You have entered an invalid input into one of the following fields</h2>
+	<ul>
+		<li>Invalid name: Try making sure its not left blank</li>
+		<li>Invalid email: Was it formated like xxx@xxx.com?</li>
+		<li>Invalid content: Was it left blank?</li>
+	</ul>
+</div>
+
+<script>
+  const form = document.getElementById("form");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const payload = new FormData(form);
+    console.log([...payload]);
+
+    fetch("/api/timeline_post", {
+      method: "POST",
+      body: payload,
+      mode: 'no-cors',
+    })
+      .then((res) => {
+      console.log(res)
+      res.json()
+    })
+      .then((data) => {
+        (data) => console.log(data);
+      })
+      .catch((err) => console.log(err));
+  });
+
+  fetch("/api/timeline_post", 
+        {
+           method: 'GET',
+           mode: 'cors',
+           cache: 'default',
+           'headers': {
+                    'Access-Control-Allow-Origin': '*',
+           }
+        })
+    .then((res) => {
+    console.log(res)
+    return res.json()
+  })
+    .then((data) => {
+        console.log(data)
+        const html = data.timeline_post.map(post =>{
+            console.log(post)
+            return `<div class="post"><h4>ID:${post.id}</h4> <div>Name: ${post.name}</div> <p>Content: ${post.content}</p> <p>Created At: ${post.created_at}</p> </div>`
+        }).join("")
+        console.log(html)
+        document.querySelector("#current-posts").insertAdjacentHTML("afterbegin",html)
+    });
+</script>
+
+{%endblock%}
