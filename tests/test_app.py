@@ -13,7 +13,7 @@ class AppTestCase(unittest.TestCase):
         response = self.client.get("/")
         assert response.status_code == 200
         html = response.get_data(as_text=True)
-        assert "<title>David & Enrique</title>" in html
+        assert '<title>David &amp; Enrique</title>' in html
         assert "<a href=" in html
         assert "<footer" in html
 
@@ -22,24 +22,24 @@ class AppTestCase(unittest.TestCase):
         assert response.status_code == 200
         assert response.is_json
         get_json = response.get_json()
-        assert "timeline_posts" in get_json
-        assert len(get_json["timeline_posts"]) == 0
+        assert "timeline_post" in get_json
+        assert len(get_json["timeline_post"]) == 0
         
         post = self.client.post("/api/timeline_post", data={'name': 'Test', 'email': 'test@poo.com', 'content': 'fewweesdd'})
         assert post.status_code == 200
         assert post.is_json
         response = self.client.get("api/timeline_post")
         post_json = response.get_json()
-        assert"timeline_posts" in post_json
-        assert len(post_json["timeline_posts"]) != 0
+        assert"timeline_post" in post_json
+        assert len(post_json["timeline_post"]) != 0
 
         response = self.client.get("/timeline")
         assert response.status_code == 200
         html = response.get_data(as_text=True)
-        assert '<form action="/api/timeline_post" method="post"' in html
-        assert 'id="name"' in html
-        assert 'id="email"' in html
-        assert 'id="content"' in html
+        assert '<form class="cool-form" id="form">' in html
+        assert 'name="name"' in html
+        assert 'name="email"' in html
+        assert 'name="content"' in html
 
     def test_malformed_timeline_post(self):
 
@@ -56,5 +56,5 @@ class AppTestCase(unittest.TestCase):
             response = self.client.post("/api/timeline_post", data={"name": "John Doe", "email": "non-an-email", "content": "Hello"})
             assert response.status_code == 400
             html = response.get_data(as_text=True)
-            assert "Invalid emial" in html
+            assert "Invalid email" in html
 
