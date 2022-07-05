@@ -12,8 +12,8 @@ load_dotenv()
 
 db=MySQLDatabase(
     "myportfolio",
-    host= 'localhost',
-    user='DAVID',
+    host= '146.190.27.200',
+    user='ADMIN',
     password = '=n24?]@u/BbPZWYH',
     port=3306 
 )
