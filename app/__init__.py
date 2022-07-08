@@ -1,6 +1,6 @@
 from optparse import TitledHelpFormatter
 import os
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, Response
 from dotenv import load_dotenv
 import folium
 import datetime
@@ -10,13 +10,19 @@ from peewee import *
 load_dotenv()
 
 
-db=MySQLDatabase(
-    "myportfolio",
-    host= '146.190.27.200',
-    user='ADMIN',
-    password = '=n24?]@u/BbPZWYH',
-    port=3306 
-)
+if os.getenv("TESTING") == "true":
+    print("Running in test mode")
+    mydb = SqliteDatabase("file:memory?mode=memory&cache=shared", uri=True)
+
+else:
+    
+    mydb=MySQLDatabase(
+        "testdb",
+        user='test2',
+        password='mypassward',
+        host='localhost',
+        port=3306 
+    )
 
 class TimelinePost(Model): 
     name = CharField()
@@ -25,10 +31,11 @@ class TimelinePost(Model):
     created_at = DateTimeField(default=datetime.datetime.now)
    
     class Meta():
-        database = db
+        database = mydb
 
-db.connect()
-db.create_tables([TimelinePost])
+
+mydb.connect()
+mydb.create_tables([TimelinePost])
         
 work_json = {
     "David":[
@@ -165,6 +172,11 @@ hobbies_json= {
 }
 
 app = Flask(__name__)
+
+@app.errorhandler(400)
+def bad_request(e, issue="Bad request"):
+    return render_template("invalid.html", title="Bad Request", error="Invalid request", e=issue), 400
+
 @app.route('/')
 def index():
     return render_template('index.html', title="David & Enrique", url=os.getenv("URL"))
@@ -229,6 +241,12 @@ def post_time_line_post():
     name = request.form['name']
     email = request.form['email']
     content = request.form['content']
+    if(len(name) == 0):
+        return bad_request(e="",issue="Invalid name")
+    elif(len(email) == 0 or "@" not in email):
+        return bad_request(e="",issue="Invalid email")
+    elif (len(content) == 0):
+        return bad_request(e="",issue="Invalid content")
     timeline_post = TimelinePost.create(name=name, email=email, content=content)
     print(model_to_dict(timeline_post))
     print("TEST:", timeline_post)
