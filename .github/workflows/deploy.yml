@@ -30,3 +30,6 @@ jobs:
 
       - name: Print project root directory
         run: ssh my-vps 'cd ${{ secrets.PROJECT_ROOT }} && pwd'
+        
+      - name: Deploy to Digital Ocean
+        run: ssh my-vps /root/project-snake-snakeeeeeeeee/redeploy-site.sh
