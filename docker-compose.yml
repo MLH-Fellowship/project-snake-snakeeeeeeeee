@@ -1,4 +1,4 @@
-version: "3"
+version: '3'
 services:
   myportfolio:
     container_name: myportfolio
@@ -6,12 +6,10 @@ services:
     restart: always
     env_file:
       - .env
-    environment: 
-      - FLASK_ENV=development
     ports: 
-      -"5000:5000"
+      - '5000:5000'
     volumes: 
-      -.:/myportfolio
+      - .:/myportfolio
     depends_on:
       - mysql
 
@@ -23,5 +21,20 @@ services:
       - .env
     volumes: 
       - mydatabase:/var/lib/mysql
+  nginx: 
+    container_name: nginx
+    image: jonasal/nginx-certbot
+    restart: always 
+    environment: 
+      - CERTBOT_EMAIL:davidlazaro20@hotmail.com
+    ports: 
+      - 80:80 
+      - 443:443
+    volumes:
+      - nginx_secrets:/etc/letsencrypt
+      - ./user_conf.d:/etc/nginx/user_conf.d
+    depends_on:
+      - myportfolio
 volumes:
   mydatabase:
+  nginx_secrets:
