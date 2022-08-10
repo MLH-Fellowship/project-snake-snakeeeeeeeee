@@ -33,3 +33,6 @@ jobs:
         
       - name: Deploy to Digital Ocean
         run: ssh my-vps /root/project-snake-snakeeeeeeeee/redeploy-site.sh
+        
+      - name: Check Docker Compose Status
+        run: ssh my-vps 'cd ${{ secrets.PROJECT_ROOT }} && docker-compose ps'
